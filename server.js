@@ -7,7 +7,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const cors = require("cors");
 const apptRoutes = require("./routes/appt");
-const authRoutes = require("./routes/auth");
+const apiRoutes = require("./routes/api");
 require("dotenv").config();
 
 require("./config/passport")(passport);
@@ -43,7 +43,7 @@ app.use(passport.session());
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", apptRoutes);
-app.use("/auth", authRoutes);
+app.use("/api", apiRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {

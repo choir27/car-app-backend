@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const ApptSchema = new mongoose.Schema({
     date: {type: String},
-    time: {type: String},
     carModel: {type: String},
     carMake: {type: String},
     carYear: {type: String},
