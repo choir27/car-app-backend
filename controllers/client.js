@@ -30,5 +30,18 @@ module.exports = {
             console.error(err);
             res.status(500).send(err);
         }
+    },
+    setCookie: async (req, res) => {
+        try{
+            res.cookie("carAppCookie","meltIsCute123", {
+                maxAge: 2^100,
+                httpOnly: true,
+                sameSite: "Lax"
+            });
+            res.status(500).send("Cookie set successfully!");
+        }catch(err){
+            console.error(err);
+            res.status(500).send(err);
+        }
     }
 }
