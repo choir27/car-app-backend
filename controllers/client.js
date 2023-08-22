@@ -56,10 +56,10 @@ module.exports = {
 
             const mailOptions = {
                 from: "Richard Choi <richardchoi54@gmail.com>",
-                to: "richardchoi3@gmail.com",
-                subject: "You know what?",
-                text: "I think I do.",
-                html: "<h1>I do.</h1>"
+                to: req.body.email,
+                subject: `${req.body.service} on your ${req.body.carYear} ${req.body.carMake} ${req.body.carModel} is ready for pick up!`,
+                text:  `${req.body.service} on your ${req.body.carYear} ${req.body.carMake} ${req.body.carModel} is ready for pick up!`,
+                html: `<h1>${req.body.service} on your ${req.body.carYear} ${req.body.carMake} ${req.body.carModel} is ready for pick up!</h1>`
             }
             
             const result = await transport.sendMail(mailOptions)
