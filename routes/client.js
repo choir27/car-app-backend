@@ -4,6 +4,5 @@ const clientController = require("../controllers/client");
 
 router.get("/getUsers", clientController.getUsers)
 router.delete("/deleteUser/:id", clientController.deleteUser)
-router.get("/setCookie", clientController.setCookie)
-
+router.get("/sendEmail", clientController.sendEmail)
 module.exports = router;
