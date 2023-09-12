@@ -27,7 +27,7 @@ module.exports = {
     deleteUser: async (req, res) =>{
         try{
             const promise = users.delete(req.params.id);
-            console.log(promise)
+            res.status(500).send(promise);
         }catch(err){
             console.error(err);
             res.status(500).send(err);
