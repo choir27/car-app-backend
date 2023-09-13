@@ -27,7 +27,12 @@ module.exports = {
     deleteUser: async (req, res) =>{
         try{
             const promise = await users.delete(req.params.id);
-            res.status(500).send(promise);
+
+            if(promise){
+                res.status(200).send({message: "User was deleted successfully", promise});
+            }else{
+                res.status(400).send({message: "User was not found."});
+            }
         }catch(err){
             console.error(err);
             res.status(500).send(err);
