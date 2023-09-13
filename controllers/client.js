@@ -4,6 +4,8 @@ const nodemailer = require("nodemailer");
 const sdk = require('node-appwrite');
  // Initialize SDK
  const client = new sdk.Client();
+ 
+ const users = new sdk.Users(client);
 
  client
      .setEndpoint(process.env.ENDPOINT) // Your API Endpoint
@@ -11,7 +13,6 @@ const sdk = require('node-appwrite');
      .setKey(process.env.API_KEY) // Your Appwrite API key
  ;
 
- const users = new sdk.Users(client);
 
 module.exports = {
     getUsers: async (req, res) => {
