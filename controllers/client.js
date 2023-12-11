@@ -65,7 +65,7 @@ module.exports = {
                 to: req.body.email,
                 subject: `${req.body.service} on your ${req.body.carYear} ${req.body.carMake} ${req.body.carModel} is ready for pick up!`,
                 text:  `${req.body.service} on your ${req.body.carYear} ${req.body.carMake} ${req.body.carModel} is ready for pick up!`,
-                html: `<h1>${req.body.service} on your ${req.body.carYear} ${req.body.carMake} ${req.body.carModel} is ready for pick up!</h1>`
+                html: `<h1>${req.body.service} on your ${req.body.carYear} ${req.body.carMake} ${req.body.carModel} is ready for pick up!</h1><br><br><h4>FAK-ENU-9999</h4><br><h4>fake_email@fakeEmailDomain.com</h4><br><h3>-AutoAligners</h3>`
             }
             
             const result = await transport.sendMail(mailOptions)
@@ -103,7 +103,7 @@ module.exports = {
                 to: req.body.email,
                 subject: `Your estimate is ready, ${req.body.firstName} ${req.body.lastName}!`,
                 text:  `Your estimate is ready, ${req.body.firstName} ${req.body.lastName}!`,
-                html: `<h1>Your estimate is ready, ${req.body.firstName} ${req.body.lastName}!</h1><br><p>Completing a ${req.body.service} on your ${req.body.carYear} ${req.body.carMake} ${req.body.carModel} costs a total of ${req.body.price}.  If you have any additional questions, comments or concerns, feel free to contact us at fake-number-9999, or at our email at fake_email_@fakeEmail.com</p><br><br><h3>-AutoAligners</h3>`
+                html: `<h1>Your estimate is ready, ${req.body.firstName} ${req.body.lastName}!</h1><br><br><h4>FAK-ENU-9999</h4><br><h4>fake_email@fakeEmailDomain.com</h4><br><h3>-AutoAligners</h3>`
             }
             
             const result = await transport.sendMail(mailOptions)
